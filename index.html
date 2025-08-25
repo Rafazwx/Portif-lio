@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <title>Portfólio</title>
+</head>
+
+<body>
+    <div class="particulas"></div>
+    <nav class="navegacao">
+        <ul class="menu">
+            <li><a href="#inicio" class="menu-link">Início</a></li>
+            <li><a href="#sobre" class="menu-link">Sobre</a></li>
+            <li><a href="#projetos" class="menu-link">Projetos</a></li>
+            <li><a href="#contatos" class="menu-link">Contato</a></li>
+        </ul>
+    </nav>
+
+
+
+    <main id="inicio" class="cabecalho">
+        <img src="./img/rafael.jpg" alt="Foto de Rafael Silva" class="foto-perfil" />
+        <h1>Rafael Silva</h1>
+        <p class="cabecalho-sub-titulo">Desenvolvedor Front End</p>
+
+        <div class="redes-sociais">
+            <a href="https://github.com/Rafazwx" target="_blank">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/rafael-silva-71a47222b/" target="_blank">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://www.instagram.com/rafaell.2304?igsh=aXM2a3Fjem9uYnY0&utm_source=qr" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+
+    </main>
+
+    <section id="sobre" class="sobre">
+        <h2 class="sobre-titulo">Sobre Mim</h2>
+        <div class="sobre-caixa">
+            <p class="sobre-paragrafo">
+                Olá! Sou um desenvolvedor front-end apaixonado por criar experiências web únicas e memoráveis. Combino
+                código limpo com design moderno para desenvolver sites que não só funcionam perfeitamente, mas também
+                impressionam visualmente.
+            </p>
+        </div>
+    </section>
+
+    <section id="projetos" class="projetos">
+        <h2 class="projetos-titulo">Meus Projetos</h2>
+        <div class="projetos-caixa">
+            <div class="projetos-card">
+                <img src="./img/dragonball.png" alt="Projetos 1" class="projetos-imagem" />
+                <h3 class="info-projetos">
+                    <a href="https://lnkd.in/dBBvXpvC" target="_blank">Dragon Ball</a>
+                </h3>
+                <p class="paragrafo-projetos">Loja virtual moderna com animações suaves e design responsivo para uma
+                    loja de veículos estilosos!</p>
+            </div>
+
+            <div class="projetos-card">
+                <img src="./img/projeto2.png" alt="Projetos 2" class="projetos-imagem" />
+                <h3 class="info-projetos">Página de Viagens</h3>
+                <p class="paragrafo-projetos">Uma página interativa com roteiros de viagem mais completa para você e sua
+                    família.</p>
+            </div>
+
+            <div class="projetos-card">
+                <img src="./img/site.png" alt="Projetos 3" class="projetos-imagem" />
+                <h3 class="info-projetos">
+                    <a href="https://lnkd.in/dPCYxgQW" target="_blank">Discord</a>
+                </h3>
+
+
+                <p class="paragrafo-projetos">A versão desktop e a versão mobile foram pensadas para oferecer uma
+                    experiência fluida em diferentes dispositivos.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contatos" class="contatos">
+        <h2 class="contatos-titulo">Entre em Contato</h2>
+
+        <form class="formulario-contato" id="formulario" onsubmit="enviarWhats(event)">
+            <div class="grupo-form">
+                <input placeholder="Nome" class="campo-form" id="nome" />
+            </div>
+            <div class="grupo-form">
+                <textarea class="campo-form" placeholder="Digite sua Mensagem" rows="6" id="mensagem"></textarea>
+            </div>
+
+            <button type="submit" class="botao-form">Enviar Whatssap</button>
+        </form>
+    </section>
+
+    <script>
+        function enviarWhats(event) {
+            event.preventDefault()
+
+            const nome = document.getElementById('nome').value;
+            const mensagem = document.getElementById('mensagem').value;
+            const telefone = '5511954905736'
+
+            const texto = `Olá! Me chamo ${nome}, ${mensagem}`;
+
+            const msgFormatada = encodeURIComponent(texto)
+
+            const url = `https://whatsa.me/${telefone}/?t=${msgFormatada}`
+
+            window.open(url, '_blank')
+
+        }
+    </script>
+</body>
+
+</html>
